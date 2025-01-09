@@ -54,11 +54,11 @@ def save_metrics(metrics:dict,metrics_path:str) -> None:
         with open(metrics_path,'w') as file:
             json.dump(metrics,file,indent=4)
     except Exception as e:
-        raise Exception(f"Error saving metrics to {filepath}:{e}")
+        raise Exception(f"Error saving metrics to {metrics_path}:{e}")
     
 def main():
     try:
-        test_data_path = "./data/processed/test_processed.csv"
+        test_data_path = "./data/processed/test_processed_mean.csv"
         model_path = "models/model.pkl"
         metrics_path = "reports/metrics.json"
         test_data = load_data(test_data_path)
